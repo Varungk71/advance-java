@@ -31,4 +31,54 @@ public class PassportRepositoryImpl implements PassportRepository {
                 createEntityManager().createNamedQuery("getUsers").getResultList();
         return users;
     }
+
+    @Override
+    public PassportDTO getById(int id) {
+
+        PassportDTO pass=(PassportDTO)EntityManagerFactorySingleton.getFactory().
+                createEntityManager().createNamedQuery("getById").setParameter("id",id).getSingleResult();
+        return pass;
+    }
+
+    @Override
+    public void updatePassport(PassportDTO dto,int id)
+    {
+       EntityManager manager=  EntityManagerFactorySingleton.getFactory().createEntityManager();
+       PassportDTO pass=manager.find(PassportDTO.class ,id);
+
+       pass.setPassportOffice(dto.getPassportOffice());
+       pass.setGivenName(dto.getGivenName());
+       pass.setSurName(dto.getSurName());
+       pass.setEmailId(dto.getEmailId());
+       pass.setLoginId(dto.getLoginId());
+       pass.setDateOfBirth(dto.getDateOfBirth());
+       pass.setPassword(dto.getPassword());
+       pass.setHintQuestion(dto.getHintQuestion());
+       pass.setHintAnswer(dto.getHintAnswer());
+
+       manager.getTransaction().begin();
+       manager.merge(pass);
+       manager.getTransaction().commit();
+    }
+    @Override
+    public boolean deleteById(int id)
+    {
+        boolean isDeleted=false;
+        if(id>0)
+        {
+            /*EntityManagerFactorySingleton.getFactory().createEntityManager().createNamedQuery("deleteById").setParameter("id", id).getSingleResult();
+        isDeleted=true;*/
+            EntityManager manager= EntityManagerFactorySingleton.getFactory().createEntityManager();
+            PassportDTO pass=manager.find(PassportDTO.class,id);
+
+            if(pass != null)
+            {
+                manager.getTransaction().begin();
+                manager.remove(pass);
+                manager.getTransaction().commit();
+            }
+        }
+//
+        return isDeleted ;
+    }
 }

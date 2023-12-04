@@ -13,7 +13,10 @@ import javax.persistence.*;
 @ToString
 @NamedQueries({
         @NamedQuery(name = "getLoginIdAndPassword" ,query = "select dto from PassportDTO dto where dto.loginId=:loginMail and dto.password=:password"),
-        @NamedQuery(name="getUsers" ,query = "select dto from PassportDTO dto")
+        @NamedQuery(name="getUsers" ,query = "select dto from PassportDTO dto"),
+        @NamedQuery(name = "getById" ,query = "select dto from PassportDTO dto where id=:id"),
+        @NamedQuery(name ="UpdateById" ,query = "update PassportDTO dto set dto.givenName=:gName where dto.id=:id"),
+        @NamedQuery(name="deleteById",query = "delete from PassportDTO dto where id=:id")
 })
         public class PassportDTO {
 

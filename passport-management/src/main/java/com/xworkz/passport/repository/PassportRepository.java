@@ -12,4 +12,10 @@ public interface PassportRepository
     public List<PassportDTO> getLoginIdAndPassword(String loginId, String password);
 
     public List<PassportDTO> getAllUsers();
+
+    public PassportDTO getById(int id);
+
+    public void updatePassport(PassportDTO dto,int id);
+
+    public boolean deleteById(int id);
 }

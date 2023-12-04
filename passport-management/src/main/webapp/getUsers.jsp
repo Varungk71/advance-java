@@ -12,16 +12,23 @@ pageEncoding="US-ASCII"%>
                     margin-left: auto;
                     margin-right: auto;
                     margin-top:4%;
+                    background-color: rgb(122, 237, 237)
                 }
-                th{
-                    background-color: rgb(122, 237, 237);
+                th{;
                 }
                 td{
                     background-color: rgb(251, 219, 139);
                 }
+                #homeButton{
+                text-decoration:none;
+                }
+                a{
+                text-decoration:none;
+                }
     </style>
 </head>
 <body>
+<a href="login.jsp" id="homeButton">Home</a>
 
     <table>
         <tr>
@@ -34,6 +41,7 @@ pageEncoding="US-ASCII"%>
             <th>Hint Answer</th>
             <th>Login Id</th>
             <th>Passport Office</th>
+            <th>Action</th>
         </tr>
     < c:forEach items="${ users }" var="user">
         <tr>
@@ -46,6 +54,9 @@ pageEncoding="US-ASCII"%>
             <td>${ user.getHintAnswer() }</td>
             <td>${ user.getLoginId() }</td>
             <td>${ user.getPassportOffice() }</td>
+            <td><a href="update?passportId=${ user.getId() }">Update</a>
+            &nbsp; &nbsp; &nbsp;
+            <a href="delete?passportId=${ user.getId() }">Delete</a>   </td>
         </tr>
         </c:forEach>
     </table>

@@ -42,5 +42,29 @@ public class PassportServiceImpl implements PassportService {
 
        return passportRepository.getAllUsers();
     }
+
+    @Override
+    public PassportDTO validateAndGetById(int id) {
+        PassportDTO pass =null;
+        if(id > 0){
+           pass= passportRepository.getById(id);
+        }
+        return pass;
+    }
+
+    @Override
+    public void updatePassport(PassportDTO dto,int id) {
+        passportRepository.updatePassport(dto,id);
+    }
+
+    @Override
+    public boolean deleteById(int id) {
+        boolean isDeleted=false;
+        if(id> 0) {
+            passportRepository.deleteById(id);
+             isDeleted=true;
+        }
+        return isDeleted;
+    }
 }
 
