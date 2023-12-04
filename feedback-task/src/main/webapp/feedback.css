@@ -1,0 +1,97 @@
+header{
+
+    background-color: rgb(28, 27, 27);
+    padding: 8px;
+    /* justify-content:left; */
+}
+#image{
+    width: 80px;
+}
+#home{
+    color: aqua;
+    margin-left: 2%;
+    text-decoration: none;
+}
+#feed{
+    color: blanchedalmond;
+    margin-left: 2%;
+    text-decoration: none;
+}
+#searchId{
+    margin-left: 27%;
+    border-radius: 20px;
+}
+#feedback{
+    color: aqua;
+    margin-left: 32%;
+}
+#nextPage{
+    color: rgb(222, 241, 235);
+}
+#para1{
+    padding-top: 30%;
+}
+#para1{
+    padding-top: 30%;
+}
+form{
+
+    padding-top: 26px;
+    background-color: cadetblue;
+    margin-left: 28%;
+    margin-right: 28%;
+    margin-top: 5%;
+}
+#datetime{
+    text-align: center;
+    color: sienna;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-top: 10px;
+}
+#foot{
+    margin-top: 10%;
+    color: rgb(200, 24, 24);
+    background-color: rgb(222, 184, 135);
+}
+.image{
+    width: 20px;
+    height: 20px;
+}
+#facebook{
+margin-left: 45%;
+}
+label{
+    margin-left: 27%;
+}
+#name{
+    margin-left: 10.5%;
+}
+#mail{
+    margin-left: 11.1%;
+}
+input{
+    border-radius: 20px;
+}
+#comment{
+    margin-left: 28%;
+}
+.move{
+
+    margin-left: 43%;
+}
+#display1{
+    margin-left: 48%;
+}
+#display3{
+    margin-left: 48%;
+}
+#display5{
+    margin-left: 44%;
+}
+#display7{
+    margin-left: 44%;
+}
+.colour{
+    color: red;
+}
+
