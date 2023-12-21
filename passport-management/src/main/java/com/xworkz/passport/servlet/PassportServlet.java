@@ -4,6 +4,7 @@ import com.xworkz.passport.dto.PassportDTO;
 import com.xworkz.passport.service.impl.PassportServiceImpl;
 
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -19,6 +20,7 @@ public class PassportServlet extends HttpServlet
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
 //        String registerPlace=req.getParameter("");
+
     String officeName=req.getParameter("passportOffice");
     String givenName=req.getParameter("givenName");
     String surName=req.getParameter("surName");
@@ -55,6 +57,7 @@ public class PassportServlet extends HttpServlet
         passportDTO.setHintQuestion(hintQuestion);
         passportDTO.setHintAnswer(hintAnswer);
 
+        // adding the data into the scope(req , context , session)
         req.setAttribute("name", givenName +" thank you for the registration");
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("passport.jsp");

@@ -53,8 +53,14 @@ public class PassportServiceImpl implements PassportService {
     }
 
     @Override
-    public void updatePassport(PassportDTO dto,int id) {
-        passportRepository.updatePassport(dto,id);
+    public boolean updatePassport(PassportDTO dto,int id)
+    {
+        boolean isUpdated=false;
+        if(id> 0) {
+            passportRepository.updatePassport(dto, id);
+            isUpdated =true ;
+        }
+        return isUpdated;
     }
 
     @Override

@@ -54,9 +54,10 @@ pageEncoding="US-ASCII"%>
             <td>${ user.getHintAnswer() }</td>
             <td>${ user.getLoginId() }</td>
             <td>${ user.getPassportOffice() }</td>
+
             <td><a href="update?passportId=${ user.getId() }">Update</a>
             &nbsp; &nbsp; &nbsp;
-            <a href="delete?passportId=${ user.getId() }">Delete</a>   </td>
+            <a href="delete?passId=${ user.getId() }">Delete</a>   </td>
         </tr>
         </c:forEach>
     </table>

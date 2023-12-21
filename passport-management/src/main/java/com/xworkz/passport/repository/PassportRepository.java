@@ -15,7 +15,7 @@ public interface PassportRepository
 
     public PassportDTO getById(int id);
 
-    public void updatePassport(PassportDTO dto,int id);
+    public boolean updatePassport(PassportDTO dto,int id);
 
     public boolean deleteById(int id);
 }

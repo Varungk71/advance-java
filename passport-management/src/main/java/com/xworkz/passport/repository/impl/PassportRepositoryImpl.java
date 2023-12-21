@@ -41,7 +41,7 @@ public class PassportRepositoryImpl implements PassportRepository {
     }
 
     @Override
-    public void updatePassport(PassportDTO dto,int id)
+    public boolean updatePassport(PassportDTO dto,int id)
     {
        EntityManager manager=  EntityManagerFactorySingleton.getFactory().createEntityManager();
        PassportDTO pass=manager.find(PassportDTO.class ,id);
@@ -59,6 +59,7 @@ public class PassportRepositoryImpl implements PassportRepository {
        manager.getTransaction().begin();
        manager.merge(pass);
        manager.getTransaction().commit();
+        return true;
     }
     @Override
     public boolean deleteById(int id)
@@ -76,6 +77,7 @@ public class PassportRepositoryImpl implements PassportRepository {
                 manager.getTransaction().begin();
                 manager.remove(pass);
                 manager.getTransaction().commit();
+                isDeleted = true ;
             }
         }
 //

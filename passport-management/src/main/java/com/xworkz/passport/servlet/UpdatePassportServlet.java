@@ -19,7 +19,7 @@ public class UpdatePassportServlet extends HttpServlet
         PassportDTO pass=new PassportDTO();
         String pId=req.getParameter("id");
 
-        System.out.println(Integer.parseInt(pId));
+//        System.out.println(Integer.parseInt(pId));
         PassportService service=new PassportServiceImpl();
 
         pass.setPassportOffice(req.getParameter("passportOffice"));
@@ -33,12 +33,15 @@ public class UpdatePassportServlet extends HttpServlet
         pass.setHintQuestion(req.getParameter("hintQuestion"));
         pass.setHintAnswer(req.getParameter("hintAnswer"));
 
-        req.setAttribute("updated","updated sucessfully");
+     boolean isUpdated =      service.updatePassport(pass,Integer.parseInt(pId));
+     if(isUpdated==true) {
 
+         req.setAttribute("updated", "updated sucessfully");
+     }
 //        RequestDispatcher dispatcher= req.getRequestDispatcher("update-data.jsp");
 //        dispatcher.forward(req,resp);
 
         resp.sendRedirect("getAllUsers");
-        service.updatePassport(pass,Integer.parseInt(pId));
+
     }
 }

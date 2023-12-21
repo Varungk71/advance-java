@@ -13,7 +13,7 @@ public interface PassportService {
 
     public PassportDTO validateAndGetById(int id);
 
-    public void updatePassport(PassportDTO dto,int id);
+    public boolean updatePassport(PassportDTO dto,int id);
 
     public boolean deleteById(int id);
 }

@@ -73,12 +73,12 @@
     <br>
     <br>
     Password <span class="required">*</span>
-    <input type="text" name="password" id="password1"  >
+    <input type="password" name="password" id="password1"  >
     <span id="display3" class="required"></span>
     <br>
     <br>
     Confirm Password <span class="required">*</span>
-    <input type="text" name="confirmPassword" id="password2"  >
+    <input type="password" name="confirmPassword" id="password2"  >
     <span id="display4" class="required"></span>
     <br>
     <br>

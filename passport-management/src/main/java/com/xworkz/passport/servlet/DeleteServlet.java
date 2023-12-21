@@ -18,7 +18,7 @@ public class DeleteServlet extends HttpServlet {
 
         PassportService service =new PassportServiceImpl();
 
-       String passId= req.getParameter("passportId");
+       String passId= req.getParameter("passId");
 //       int id=Integer.parseInt(passId);
 
        req.setAttribute("deleted","deleted sucessfully");
